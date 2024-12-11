@@ -133,45 +133,31 @@ public class Scrabble {
 	// Plays a Scrabble game. Prompts the user to enter 'n' for playing a new hand, or 'e'
 	// to end the game. If the user enters any other input, writes an error message.
 	public static void playGame() {
-		init();
-        // The variable in is set to represent the stream of characters
-        // coming from the keyboard. Used for getting the user's inputs.
-        In in = new In();
+		// Initializes the dictionary
+    	init();
+		// The variable in is set to represent the stream of characters 
+		// coming from the keyboard. Used for getting the user's inputs.  
+		In in = new In();
 
-        while(true) {
-            System.out.println("Enter n to deal a new hand, or e to end the game:");
-            // Gets the user's input, which is all the characters entered by
-            // the user until the user enter the ENTER character.
-            String input = in.readString();
-            if (input.equals("e")) {
-                // סיום המשחק
-                System.out.println("Thanks for playing!");
-                break;
-            } else if (input.equals("n")) {
-                // יצירת יד חדשה
-                String hand = createHand();
-                playHand(hand); // משחקים יד חדשה
-            } else {
-                // קלט לא תקין
-                System.out.println("Invalid input. Please enter 'n' or 'e'.");
-            }
-        }
-    }
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+		while(true) {
+			System.out.println("Enter n to deal a new hand, or e to end the game:");
+			// Gets the user's input, which is all the characters entered by 
+			// the user until the user enter the ENTER character.
+			String input = in.readString();
+			//// Replace the following break statement with code
+			//// that completes the game playing loop
+			if (input.equals("n")) {
+				String hand = createHand(); 
+				playHand(hand);
+			}
+			else if (input.equals("e")) break;
+			else {
+				System.out.println( "error");
+			}
+			
+			
+		}
+	}
 
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
