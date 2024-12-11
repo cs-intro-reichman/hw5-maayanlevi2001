@@ -67,19 +67,15 @@ public class MyString {
      * spaces.
      */
     public static String spacedString(String str) {
-        String str2 = null;
-        for (int i = 0; i < str.length(); i++)
-        {
-            if(i == str.length()-1) {
-                str2 += str.charAt(i); 
-            }
-            else {
-                str2 += str.charAt(i)+ " " ;  
+        String result = "";
+        for (int i = 0; i < str.length(); i++) { 
+            result += str.charAt(i); 
+            if (i < str.length() - 1) {
+                result += " "; 
             }
         }
-        return str2;
+        return result;
     }
-
     /**
      * Returns a string of n lowercase letters, selected randomly from the
      * English alphabet 'a', 'b', 'c', ..., 'z'. Note that the same letter can
